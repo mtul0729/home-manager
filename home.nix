@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports =
+    [ 
+      ./shell.nix
+    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "myul";
@@ -44,44 +48,14 @@
     nil
     # wpsoffice-cn
   ];
-
-  # Starship is a minimal, blazing-fast, and infinitely customizable prompt for any shell!
-  programs.starship = {
+  programs.git= {
     enable = true;
-    settings = {
-      add_newline = true;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      #line_break.disabled = true;
-    };
+    userName = "myul";
+    userEmail = "myul@foxmail.com";
   };
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      abbr -a -- zdup 'sudo zypper dup'
-      abbr -a -- zlu 'sudo zypper list-updates'
-      abbr -a -- zu 'sudo zypper update'
-      abbr -a -- zin 'sudo zypper install'
-      abbr -a -- wcn 'warp-cli connect'
-      abbr -a -- wdc 'warp-cli disconnect'
-    '';
-  };
-  
-  programs.atuin={enable = true;
-  settings = {
-  auto_sync = true;
-  sync_frequency = "5m";
-  sync_address = "https://api.atuin.sh";
-  search_mode = "prefix";
-};};
+  programs.gh.enable = true;
 
-  programs.zoxide.enable = true;
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
