@@ -1,11 +1,13 @@
-{ config, pkgs, lib, ... }:
-
 {
-  imports =
-    [
-      ./shell.nix
-      ./helix.nix
-    ];
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ./shell.nix
+    ./helix.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "myul";
@@ -48,8 +50,8 @@
     # '')
     nil
     nixpkgs-fmt
-    # wpsoffice-cn
   ];
+
   programs.git = {
     enable = true;
     userName = "myul";

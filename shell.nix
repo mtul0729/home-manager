@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Starship is a minimal, blazing-fast, and infinitely customizable prompt for any shell!
   programs.starship = {
     enable = true;
