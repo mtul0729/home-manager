@@ -22,14 +22,16 @@
       abbr -a -- wdc 'warp-cli disconnect'
     '';
   };
-  
-  programs.atuin={enable = true;
-  settings = {
-  auto_sync = true;
-  sync_frequency = "5m";
-  sync_address = "https://api.atuin.sh";
-  search_mode = "prefix";
-};};
+
+  programs.atuin = {
+    enable = true;
+    settings = {
+      auto_sync = true;
+      sync_frequency = "5m";
+      sync_address = "https://api.atuin.sh";
+      search_mode = "prefix";
+    };
+  };
 
   programs.zoxide.enable = true;
 

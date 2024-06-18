@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ./shell.nix
       ./helix.nix
     ];
@@ -47,9 +47,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     nil
+    nixpkgs-fmt
     # wpsoffice-cn
   ];
-  programs.git= {
+  programs.git = {
     enable = true;
     userName = "myul";
     userEmail = "myul@foxmail.com";
