@@ -49,7 +49,8 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     nil
-    nixpkgs-fmt
+    # nixpkgs-fmt
+    alejandra
   ];
 
   programs.git = {
