@@ -55,8 +55,8 @@
 
   programs.git = {
     enable = true;
-    userName = "myul";
-    userEmail = "myul@foxmail.com";
+    userName = "mcp";
+    userEmail = "hjp1279@outlook.com";
   };
 
   programs.gh.enable = true;
