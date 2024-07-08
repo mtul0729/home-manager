@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./shell.nix
+    ./applets.nix
     ./helix.nix
     ./fonts.nix
   ];
@@ -70,18 +71,15 @@
     nil # LSP
     alejandra #formater
     nurl #checksum fetcher
+
+    #misc
+    unar
+    jq
+    poppler
+    fd
+    ripgrep
+    ffmpegthumbnailer
   ];
-
-  programs.git = {
-    enable = true;
-    userName = "mcp";
-    userEmail = "hjp1279@outlook.com";
-  };
-
-  programs.gh.enable = true;
-  programs.gitui.enable = true;
-  programs.btop.enable = true;
-  programs.eza.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
