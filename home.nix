@@ -65,9 +65,11 @@
     })
     julia-mono
     dejavu_fonts
-    nil
-    # nixpkgs-fmt
-    alejandra
+
+    #nix related
+    nil # LSP
+    alejandra #formater
+    nurl #checksum fetcher
   ];
 
   programs.git = {
