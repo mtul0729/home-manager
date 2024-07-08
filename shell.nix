@@ -43,4 +43,9 @@
     enable = true;
     nix-direnv.enable = true;
   };
+
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
