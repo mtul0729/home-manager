@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # all fonts are linked to /nix/var/nix/profiles/system/sw/share/X11/fonts
   fonts = {
     fontconfig.enable = true;
     # user defined fonts
