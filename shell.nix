@@ -27,6 +27,8 @@
     '';
   };
 
+  programs.nushell = {enable = true;};
+
   programs.atuin = {
     enable = true;
     settings = {
@@ -36,6 +38,4 @@
       search_mode = "prefix";
     };
   };
-
-
 }
