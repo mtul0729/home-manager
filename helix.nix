@@ -18,6 +18,9 @@
     ];
     settings = {
       theme = "fleet_dark";
+      editor = {
+        line-number = "relative";
+      };
     };
     languages = {
       language-server.rust-analyzer.config.check = {command = "clippy";};
