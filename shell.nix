@@ -17,14 +17,14 @@
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
-      abbr -a -- zdup 'sudo zypper dup'
-      abbr -a -- zlu 'sudo zypper list-updates'
-      abbr -a -- zu 'sudo zypper update'
-      abbr -a -- zin 'sudo zypper install'
-      abbr -a -- wcn 'warp-cli connect'
-      abbr -a -- wdc 'warp-cli disconnect'
-    '';
+    # interactiveShellInit = ''
+    # '';
+    shellAbbrs = {
+      zdup = "sudo zypper dup";
+      zlu = "sudo zypper list-updates";
+      zu = "sudo zypper update";
+      zin = "sudo zypper install";
+    };
   };
 
   programs.nushell = {enable = true;};

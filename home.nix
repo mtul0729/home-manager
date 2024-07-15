@@ -24,12 +24,12 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # Home Manager will use this value to determine the packages it should manage.
+  # Allow unfree packages. 
   # see https://nixos.wiki/wiki/Unfree_Software
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
-      # Add additional package names here
       "wpsoffice"
+      "vista-fonts-chs"
     ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -51,6 +51,8 @@
     source-serif # 衬线字体，不含汉字。字族名叫 Source Code Pro，以及带字重的变体
     source-han-sans # 思源黑体
     source-han-serif # 思源宋体
+    #vistafonts-cht # 微软正黑体
+    vistafonts-chs # 微软雅黑体
 
     # nerdfonts
     # https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/data/fonts/nerdfonts/shas.nix
