@@ -24,7 +24,7 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # Allow unfree packages. 
+  # Allow unfree packages.
   # see https://nixos.wiki/wiki/Unfree_Software
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
@@ -70,23 +70,26 @@
     dejavu_fonts
 
     #nix related
-    nil # LSP
     alejandra #formater
+    nil # LSP
     nurl #checksum fetcher
 
     #misc
-    unar
-    jq
     poppler
     fd
-    ripgrep
     ffmpegthumbnailer
+    jq
+    ripgrep
+    tokei
+    unar
+    wl-clipboard-rs
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".wezterm.lua".source = dotfiles/wezterm.lua;
+    ".config/wezterm".source = dotfiles/wezterm;
+    ".config/helix".source = dotfiles/helix;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
