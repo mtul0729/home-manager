@@ -1,7 +1,11 @@
-{pkgs, ...}: {
-  # TODO: switch to upstream package https://github.com/helix-editor/helix
+{
+  pkgs,
+  helix,
+  ...
+}: {
   programs.helix = {
     enable = true;
+    package = helix.default;
     defaultEditor = true;
     extraPackages = with pkgs; [
       alejandra

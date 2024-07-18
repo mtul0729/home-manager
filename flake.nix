@@ -8,25 +8,30 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helix-editor.url = "github:helix-editor/helix";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    helix-editor,
     ...
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    helix = helix-editor.packages.${system};
   in {
     homeConfigurations."myul" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      modules = [./home.nix];
-
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+      modules = [
+        ./home.nix
+        {
+          # Optionally use _module.args
+          # to pass through arguments to home.nix
+          _module.args = {inherit helix;};
+        }
+      ];
     };
   };
 }
