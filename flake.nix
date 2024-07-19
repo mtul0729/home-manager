@@ -2,13 +2,15 @@
   description = "Home Manager configuration of myul";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix-editor.url = "github:helix-editor/helix";
+    helix-editor = {
+      url = "github:helix-editor/helix";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

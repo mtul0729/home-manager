@@ -5,7 +5,7 @@
 }: {
   programs.helix = {
     enable = true;
-    package = helix.default;
+    # package = helix.default; # use upstream package
     defaultEditor = true;
     extraPackages = with pkgs; [
       alejandra
