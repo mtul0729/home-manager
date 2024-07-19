@@ -5,3 +5,9 @@ language-servers = ["nil"]
 
 [language.formatter]
 command = "alejandra"
+
+[[language]]
+name = "rust"
+
+[language.formatter]
+command = "rustfmt"

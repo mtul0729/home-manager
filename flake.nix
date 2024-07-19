@@ -23,6 +23,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     helix = helix-editor.packages.${system};
   in {
+    formatter.${system} = pkgs.alejandra;
     homeConfigurations."myul" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
