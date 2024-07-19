@@ -4,6 +4,17 @@
   lib,
   ...
 }: {
+  home.packages = with pkgs; [
+    poppler
+    fd
+    ffmpegthumbnailer
+    jq
+    ripgrep
+    tokei
+    unar
+    wl-clipboard-rs
+  ];
+
   programs = {
     fzf.enable = true;
     zoxide.enable = true;
