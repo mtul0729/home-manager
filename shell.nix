@@ -25,6 +25,12 @@
       zu = "sudo zypper update";
       zin = "sudo zypper install";
     };
+    # https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+    shellInitLast = ''
+      set NPM_PACKAGES "$HOME/.npm-packages"
+      set PATH $NPM_PACKAGES/bin $PATH
+      set MANPATH $NPM_PACKAGES/share/man $MANPATH
+    '';
   };
 
   programs.nushell = {enable = true;};
